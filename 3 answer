@@ -1,0 +1,9 @@
+import numpy as np
+import matplotlib.pyplot as plt
+Programming_languages_labels1=['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+Popularity_of_programming_language1= [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+explode_parameters1 = [0.1, 0, 0, 0, 0, 0]
+Programming_languages_labels1= np.array(Programming_languages_labels)
+type(Programming_languages_labels1)
+plt.pie(Popularity_of_programming_language1,explode=explode_parameters1,labels=Programming_languages_labels1,startangle = 145,shadow = True,autopct='%1.1f%%')
+plt.show()
