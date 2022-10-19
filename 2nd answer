@@ -1,0 +1,23 @@
+import pandas as pd
+#Read 'data.csv'.
+df=pd.read_csv("data.csv")
+#showing the statistical description about the data.
+df.describe()
+#Check if the data has null values and replace with the mean
+df=df.fillna(df.mean())
+#Select at least 2 columns and aggregate the data using: min,max, count, mean.
+print(df[['Duration1','Pulse11']].agg(['min1','max1','mean1','count1']))
+#filter the data frame to select the rows with colories values between 500 and 1000.
+print(df[(df.Calories>500) & (df.Calories<1000)])
+#filter the dataframe to select the rows betwwen >500 and pulse < 100.
+print(df[(df.Calories>500) & (df.Pulse<100)])
+#Creating new "df_modified" dataframe that contains all the columns from df expect for "Maxpulse"
+df_modified=pd.DataFrame(df,columns=["Duration","Pulse","Calories"])
+print(df_modified)
+#Deleting the "Maxpulse" column from the maindf dataframe
+del df['Maxpulse']
+# Converting the datatype of Calories column to int datatype
+df["Calories"] = df["Calories"].astype("int")
+print(df)
+#Creating a scatter plot for the two columns(Duration and Calories).
+df.plot.scatter(x = 'Duration', y= 'Calories')
