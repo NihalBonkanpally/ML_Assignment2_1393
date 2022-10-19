@@ -1,0 +1,11 @@
+from numpy import random;
+import numpy as np;
+a1=random.randint(20, size=(15))
+be1 = a.reshape(3,5)
+print(be1)
+print(be1.shape)
+new_a1 = np.where(be1 == [
+   [i]
+   for i in np.amax(be1, axis = 1)
+], 0 ,be1)
+print(new_a1)
